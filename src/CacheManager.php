@@ -15,6 +15,6 @@ class CacheManager extends IlluminateCacheManager
     {
         $memcached = new MemcachedManager($this->app, $this->app['memcached.connector']);
 
-        return $this->repository(new MemcachedStore($memcached, $this->getPrefix()));
+        return $this->repository(new MemcachedStore($memcached, $this->getPrefix('laravel')));
     }
 }
